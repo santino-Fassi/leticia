@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f0eb">
+    <meta name="description"
+        content="Un homenaje a los 30 años de trayectoria, arte y corazón de Leticia Suárez del Cerro.">
+    <title>30 Años Modelando Sueños - Homenaje a Leticia Suárez del Cerro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="frontend/estilos/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="frontend/scripts/app.js" defer></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <header class="site-header container-fluid">
+            <div class="row align-items-center justify-content-between g-3">
+                <a class="brand col-auto d-flex align-items-center gap-3" href="#inicio" aria-label="Volver al inicio">
+                    <span class="brand-mark d-flex align-items-center justify-content-center">L</span>
+                    <span class="brand-copy d-flex flex-column">
+                        <strong>Leticia Suárez del Cerro</strong>
+                        <span>30 años modelando sueños</span>
+                    </span>
+                </a>
+                <a class="nav-link col-auto" href="#bienvenida">EL HOMENAJE <span aria-hidden="true">↘</span></a>
+            </div>
+        </header>
+
+        <main id="inicio">
+            <section class="hero" aria-labelledby="main-title">
+                <div class="container-fluid site-container">
+                    <div class="row align-items-center g-4 g-lg-6">
+                        <div class="col-12 col-lg-6">
+                            <div class="hero-copy text-center text-lg-start align-items-center">
+                                <div
+                                    class="eyebrow d-flex align-items-center gap-3 justify-content-center justify-content-lg-start">
+                                    Un viaje hecho con amor</div>
+                                <h1 id="main-title">
+                                    <span class="years">30 Años</span>
+                                    <span class="script">Modelando Sueños</span>
+                                </h1>
+                                <p class="hero-subtitle">Celebrando la trayectoria, el arte y el corazón de
+                                    <strong>Leticia Suárez del Cerro.</strong>
+                                </p>
+                                <div class="hero-note d-flex align-items-center gap-2 justify-content-center">
+                                    <span class="flower-mark flex-shrink-0" aria-hidden="true"></span>
+                                    <span>Tres décadas de creatividad, enseñanza y comunidad</span>
+                                </div>
+                                <div class="cta-row d-flex flex-wrap gap-2 justify-content-center">
+                                    <a class="button button-primary d-inline-flex align-items-center justify-content-center gap-3"
+                                        href="#bienvenida">Leer el homenaje <span class="arrow"
+                                            aria-hidden="true">↓</span></a>
+                                    <a class="button button-secondary d-inline-flex align-items-center justify-content-center gap-3"
+                                        href="#cierre">Celebrar su historia <span class="arrow"
+                                            aria-hidden="true">↗</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="collage-wrap">
+                                <div class="collage row g-2 mx-0">
+                                    <div class="photo-column col-6">
+                                        <div class="photo-panel archive" id="archive-panel">
+                                            <img src="https://variasmanualidades.wordpress.com/files/2011/11/117.jpg"
+                                                alt="Portada editorial de una publicación de porcelana fría de Leticia Suárez del Cerro"
+                                                loading="eager" onerror="this.parentElement.classList.add('no-image')">
+                                            <div
+                                                class="photo-fallback d-none align-items-center justify-content-center">
+                                                Recuerdos de papel, primeras revistas y una pasión que empezó a tomar
+                                                forma.
+                                            </div>
+                                            <div class="photo-label d-flex flex-column">
+                                                <small>El archivo</small>
+                                                <strong>Los comienzos</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="photo-column col-6">
+                                        <div class="photo-panel current" id="current-panel">
+                                            <img src="https://cdn.ideatina.com/files/2023/02/260_carousel_0000s_0000_1.jpg"
+                                                alt="Leticia sonríe mientras sostiene una figura realizada en porcelana fría"
+                                                loading="eager" onerror="this.parentElement.classList.add('no-image')">
+                                            <div
+                                                class="photo-fallback d-none align-items-center justify-content-center">
+                                                El taller de hoy: manos, ideas y nuevas historias para modelar.
+                                            </div>
+                                            <div class="photo-label d-flex flex-column">
+                                                <small>El presente</small>
+                                                <strong>La misma pasión</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collage-sticker d-flex flex-column align-items-center justify-content-center">
+                                    <span>desde</span>
+                                    <strong>1996</strong>
+                                    <span>con amor</span>
+                                </div>
+                                <div class="collage-caption d-flex justify-content-between gap-3">
+                                    <span>Memoria · Oficio · Legado</span>
+                                    <span>Una historia que sigue creciendo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="ornament d-flex justify-content-center align-items-center gap-3" aria-hidden="true">
+                <span>❀</span>
+            </div>
+
+            <section class="welcome-section" id="bienvenida" aria-labelledby="welcome-title">
+                <div class="container-fluid site-container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10 col-xl-9">
+                            <article class="welcome-card">
+                                <div class="section-kicker">Una celebración compartida</div>
+                                <h2 id="welcome-title">Bienvenidos a este viaje</h2>
+                                <p class="section-subtitle">Un homenaje vivo a treinta años de arte, generosidad y
+                                    sueños hechos a mano.</p>
+                                <div class="welcome-copy">
+                                    <p class="lead">Hay manos que trabajan la masa, y hay manos que, con amor y
+                                        paciencia,
+                                        transforman la masa en historias, magia y vocación.</p>
+                                    <p>En 1996, un viaje maravilloso comenzó a moldearse. Desde aquellas primeras
+                                        pantallas de
+                                        <em>Utilísima Satelital</em>, pasando por páginas de revistas que recorrieron el
+                                        continente,
+                                        hasta transformarse en una escuela que hoy une a miles de apasionadas del
+                                        modelado. Tres
+                                        décadas se dicen rápido, pero se sienten en cada rincón de la comunidad que
+                                        logramos
+                                        construir juntos.
+                                    </p>
+                                    <p>Este espacio es un homenaje vivo a estos <strong>30 años de carrera de
+                                            Leticia.</strong>
+                                        Tres décadas de generosidad incondicional, de técnicas compartidas sin secretos,
+                                        de tardes
+                                        enteras con olor a masa fresca y de formar a miles de profesoras que hoy llevan
+                                        su legado
+                                        en sus propias manos.</p>
+                                    <p>El próximo <strong>8 de diciembre</strong> nos reuniremos de manera presencial
+                                        para abrazarla
+                                        y celebrar este hito. Pero como el cariño por Lety no conoce de fronteras ni de
+                                        distancias,
+                                        abrimos las puertas de esta ventana digital para todo el mundo.</p>
+                                    <p class="invitation">A vos, que aprendiste a modelar con sus videos, que te
+                                        emocionaste con sus
+                                        creaciones, o que encontraste en la porcelana fría tu cable a tierra o tu
+                                        sustento:
+                                        ¡Bienvenidos!</p>
+                                    <p>Te invitamos a recorrer su historia, revivir los momentos más dulces y dejar tu
+                                        huella en
+                                        nuestro muro de mensajes.</p>
+                                    <p><strong>¡Gracias por ser parte de este viaje mágico!</strong></p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <div class="bottom-cta" id="cierre">
+                                <p>Treinta años modelando sueños.<br>Y todavía quedan muchas historias por crear.</p>
+                                <a class="button button-primary d-inline-flex align-items-center justify-content-center gap-3"
+                                    href="#inicio">Volver al comienzo <span class="arrow"
+                                        aria-hidden="true">↑</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container-fluid site-container">
+                <div class="footer-brand">Con amor, para Lety</div>
+                <div>30 Años Modelando Sueños · Un homenaje a Leticia Suárez del Cerro</div>
+                <div class="image-note"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

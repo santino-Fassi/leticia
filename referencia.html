@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f0eb" />
+  <meta name="description"
+    content="Un homenaje a los 30 años de trayectoria, arte y corazón de Leticia Suárez del Cerro." />
+  <title>30 Años Modelando Sueños · Homenaje a Leticia Suárez del Cerro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: oklch(97.729% 0.0101 81.7);
+      --paper: oklch(99.42% 0.00681 88.607);
+      --rose: oklch(68.646% 0.08404 17.501);
+      --rose-dark: oklch(51.301% 0.0726 9.073);
+      --rose-pale: oklch(90.628% 0.02435 17.379);
+      --sage: oklch(73.67% 0.02743 150.779);
+      --sage-dark: oklch(50.685% 0.03695 160.293);
+      --butter: oklch(88.124% 0.06398 87.256);
+      --ink: oklch(36.927% 0.01863 28.161);
+      --muted: oklch(55.565% 0.01803 42.125);
+      --line: oklch(51.301% 0.0726 9.073 / 0.2);
+      --shadow: 0 24px 70px oklch(40.15% 0.04467 29.306 / 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 8% 8%, oklch(68.646% 0.08404 17.501 / 0.13), transparent 28rem),
+        radial-gradient(ellipse at 92% 46%, oklch(73.67% 0.02743 150.779 / 0.16), transparent 30rem),
+        var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.75;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .28;
+      background-image: radial-gradient(oklch(52.755% 0.05253 46.98 / 0.17) .55px, transparent .55px);
+      background-size: 7px 7px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--rose-dark);
+      border: 1px solid oklch(51.301% 0.0726 9.073 / 0.42);
+      background: oklch(99.42% 0.00681 88.607 / 0.68);
+      font: italic 24px 'Cormorant Garamond', serif;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .brand-copy strong {
+      font-size: 11px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .06em;
+      margin-top: 4px;
+    }
+
+    .nav-link {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-decoration: none;
+      color: var(--rose-dark);
+      border-bottom: 1px solid var(--rose);
+      padding-bottom: 4px;
+    }
+
+    .hero {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 74px 0 65px;
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      align-items: center;
+      gap: clamp(34px, 6vw, 84px);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--sage-dark);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 33px;
+      height: 1px;
+      background: var(--sage-dark);
+    }
+
+    h1 {
+      margin: 21px 0 18px;
+      font-weight: 600;
+      line-height: .92;
+      letter-spacing: -.025em;
+    }
+
+    h1 .years {
+      display: block;
+      font: italic 600 clamp(44px, 5vw, 72px)/.98 'Cormorant Garamond', serif;
+      color: var(--rose-dark);
+    }
+
+    h1 .script {
+      display: block;
+      margin: 5px 0 -2px -4px;
+      font: 400 clamp(57px, 6.6vw, 94px)/1 'Allura', cursive;
+      color: #a96e75;
+      white-space: nowrap;
+    }
+
+    .hero-subtitle {
+      max-width: 420px;
+      margin: 22px 0 28px;
+      font: italic 500 22px/1.42 'Cormorant Garamond', serif;
+      color: #685450;
+    }
+
+    .hero-subtitle strong {
+      color: var(--rose-dark);
+      font-weight: 600;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .045em;
+    }
+
+    .flower-mark {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      border: 1px solid oklch(73.67% 0.02743 150.779 / 0.9);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .flower-mark::before,
+    .flower-mark::after {
+      content: "";
+      position: absolute;
+      border: 1px solid var(--sage);
+      border-radius: 50% 50% 0 50%;
+      width: 6px;
+      height: 8px;
+      top: 5px;
+      left: 7px;
+      transform: rotate(-32deg);
+    }
+
+    .flower-mark::after {
+      transform: rotate(58deg);
+      left: 9px;
+      top: 8px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 30px;
+    }
+
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--rose-dark);
+      box-shadow: 0 9px 22px oklch(51.301% 0.0726 9.073 / 0.19);
+    }
+
+    .button-secondary {
+      color: var(--rose-dark);
+      border: 1px solid oklch(51.301% 0.0726 9.073 / 0.32);
+      background: oklch(99.42% 0.00681 88.607 / 0.64);
+    }
+
+    .arrow {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .collage-wrap {
+      position: relative;
+      padding: 14px;
+      border: 1px solid oklch(51.301% 0.0726 9.073 / 0.26);
+      background: oklch(99.42% 0.00681 88.607 / 0.72);
+      box-shadow: var(--shadow);
+      border-radius: 46% 46% 12px 12px / 22% 22% 12px 12px;
+    }
+
+    .collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 46% 46% 5px 5px / 22% 22% 5px 5px;
+    }
+
+    .photo-panel {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      background: #e6d7c7;
+    }
+
+    .photo-panel img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .photo-panel:hover img {
+      transform: scale(1.035);
+    }
+
+    .photo-panel.archive img {
+      filter: sepia(.32) saturate(.8) contrast(.94);
+      object-position: 76% center;
+    }
+
+    .photo-panel.current img {
+      object-position: 48% center;
+    }
+
+    .photo-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, oklch(25.311% 0.01919 29.245 / 0.62), transparent 40%);
+      pointer-events: none;
+    }
+
+    .photo-label {
+      position: absolute;
+      z-index: 2;
+      bottom: 20px;
+      left: 18px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      text-shadow: 0 1px 8px oklch(0% 0 0 / 0.28);
+    }
+
+    .photo-label small {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .photo-label strong {
+      font: italic 500 26px/1.05 'Cormorant Garamond', serif;
+    }
+
+    .photo-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #7b5d58;
+      font: italic 500 22px/1.4 'Cormorant Garamond', serif;
+      background: linear-gradient(135deg, #e8d7cd, #f6eee3 55%, #dbe4d9);
+    }
+
+    .photo-panel.no-image .photo-fallback {
+      display: flex;
+    }
+
+    .photo-panel.no-image img {
+      display: none;
+    }
+
+    .collage-sticker {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--butter);
+      color: #755d42;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 5px 20px oklch(31.775% 0.03432 47.572 / 0.16);
+      border: 4px solid oklch(99.42% 0.00681 88.607 / 0.78);
+      line-height: 1.02;
+    }
+
+    .collage-sticker span {
+      font-size: 8px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .collage-sticker strong {
+      font: italic 600 25px 'Cormorant Garamond', serif;
+    }
+
+    .collage-caption {
+      margin: 13px 8px 1px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .collage-caption span:last-child {
+      text-align: right;
+    }
+
+    .ornament {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      color: var(--rose);
+      margin: 0 auto 20px;
+    }
+
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      width: min(15vw, 128px);
+      height: 1px;
+      background: var(--line);
+    }
+
+    .ornament span {
+      font-size: 19px;
+    }
+
+    .welcome-section {
+      padding: 68px 24px 86px;
+      background: linear-gradient(180deg, oklch(90.628% 0.02435 17.379 / 0.35), oklch(97.729% 0.0101 81.7 / 0) 88%);
+    }
+
+    .welcome-card {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: clamp(30px, 5.5vw, 66px) clamp(24px, 7vw, 84px);
+      background: oklch(99.42% 0.00681 88.607 / 0.84);
+      border: 1px solid oklch(51.301% 0.0726 9.073 / 0.21);
+      box-shadow: 0 20px 55px oklch(40.15% 0.04467 29.306 / 0.07);
+      position: relative;
+    }
+
+    .welcome-card::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border: 1px solid oklch(73.67% 0.02743 150.779 / 0.42);
+      pointer-events: none;
+    }
+
+    .section-kicker {
+      text-align: center;
+      color: var(--sage-dark);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .23em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      margin: 0 0 7px;
+      text-align: center;
+      font: italic 600 clamp(32px, 4vw, 44px)/1.15 'Cormorant Garamond', serif;
+      color: var(--rose-dark);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      margin: 0 auto 33px;
+      max-width: 500px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .welcome-copy {
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+      line-height: 1.96;
+      color: #594b47;
+    }
+
+    .welcome-copy p {
+      margin: 0 0 19px;
+    }
+
+    .welcome-copy .lead {
+      font: italic 500 24px/1.48 'Cormorant Garamond', serif;
+      color: #785a56;
+      margin-bottom: 25px;
+    }
+
+    .welcome-copy strong {
+      color: var(--rose-dark);
+      font-weight: 700;
+    }
+
+    .welcome-copy em {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1em;
+    }
+
+    .welcome-copy .invitation {
+      margin-top: 27px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+      font: italic 600 23px/1.55 'Cormorant Garamond', serif;
+      color: var(--rose-dark);
+    }
+
+    .bottom-cta {
+      text-align: center;
+      max-width: 600px;
+      margin: 46px auto 0;
+    }
+
+    .bottom-cta p {
+      color: var(--muted);
+      font: italic 500 22px/1.4 'Cormorant Garamond', serif;
+      margin: 0 0 17px;
+    }
+
+    .footer {
+      padding: 28px 24px 34px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .06em;
+    }
+
+    .footer .footer-brand {
+      color: var(--rose-dark);
+      font: italic 500 23px 'Cormorant Garamond', serif;
+      margin-bottom: 2px;
+    }
+
+    .image-note {
+      margin: 9px auto 0;
+      max-width: 840px;
+      font-size: 9px;
+      line-height: 1.5;
+      opacity: .82;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 54px;
+        gap: 38px;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .eyebrow {
+        justify-content: center;
+      }
+
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-note,
+      .cta-row {
+        justify-content: center;
+      }
+
+      .collage-wrap {
+        width: min(600px, 100%);
+        margin: 0 auto;
+      }
+
+      .collage,
+      .photo-panel {
+        min-height: 380px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .site-header {
+        width: calc(100% - 32px);
+        min-height: 74px;
+      }
+
+      .brand-copy strong {
+        font-size: 9px;
+        letter-spacing: .12em;
+      }
+
+      .brand-copy span {
+        font-size: 10px;
+      }
+
+      .brand-mark {
+        width: 37px;
+        height: 37px;
+      }
+
+      .nav-link {
+        font-size: 10px;
+      }
+
+      .hero {
+        width: calc(100% - 32px);
+        padding: 45px 0 51px;
+      }
+
+      h1 .years {
+        font-size: clamp(39px, 11vw, 57px);
+      }
+
+      h1 .script {
+        font-size: clamp(54px, 14vw, 78px);
+        white-space: normal;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+      }
+
+      .collage-wrap {
+        padding: 8px;
+        border-radius: 40% 40% 8px 8px / 14% 14% 8px 8px;
+      }
+
+      .collage {
+        min-height: 260px;
+        gap: 6px;
+        border-radius: 40% 40% 4px 4px / 14% 14% 4px 4px;
+      }
+
+      .photo-panel {
+        min-height: 260px;
+      }
+
+      .photo-label {
+        left: 10px;
+        bottom: 13px;
+      }
+
+      .photo-label small {
+        font-size: 7px;
+        letter-spacing: .11em;
+      }
+
+      .photo-label strong {
+        font-size: 21px;
+      }
+
+      .collage-sticker {
+        width: 66px;
+        height: 66px;
+        border-width: 3px;
+      }
+
+      .collage-sticker strong {
+        font-size: 21px;
+      }
+
+      .collage-caption {
+        font-size: 7px;
+        margin-top: 9px;
+      }
+
+      .welcome-section {
+        padding: 46px 15px 60px;
+      }
+
+      .welcome-card {
+        padding: 35px 25px;
+      }
+
+      .welcome-copy {
+        font-size: 13px;
+      }
+
+      .welcome-copy .lead {
+        font-size: 22px;
+      }
+
+      .welcome-copy .invitation {
+        font-size: 21px;
+      }
+
+      .button {
+        min-height: 43px;
+        padding: 0 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">
+      <span class="brand-mark">L</span>
+      <span class="brand-copy"><strong>Leticia Suárez del Cerro</strong><span>30 años modelando sueños</span></span>
+    </a>
+    <a class="nav-link" href="#bienvenida">EL HOMENAJE <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="main-title">
+      <div class="hero-copy">
+        <div class="eyebrow">Un viaje hecho con amor</div>
+        <h1 id="main-title"><span class="years">30 Años</span><span class="script">Modelando Sueños</span></h1>
+        <p class="hero-subtitle">Celebrando la trayectoria, el arte y el corazón de <strong>Leticia Suárez del
+            Cerro.</strong></p>
+        <div class="hero-note"><span class="flower-mark" aria-hidden="true"></span><span>Tres décadas de creatividad,
+            enseñanza y comunidad</span></div>
+        <div class="cta-row">
+          <a class="button button-primary" href="#bienvenida">Leer el homenaje <span class="arrow"
+              aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="#cierre">Celebrar su historia <span class="arrow"
+              aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="collage-wrap" aria-label="Collage de archivo editorial y Leticia con una de sus creaciones">
+        <div class="collage">
+          <div class="photo-panel archive" id="archive-panel">
+            <img src="https://variasmanualidades.wordpress.com/files/2011/11/117.jpg"
+              alt="Portada editorial de una publicación de porcelana fría de Leticia Suárez del Cerro" loading="eager"
+              onerror="this.parentElement.classList.add('no-image')" />
+            <div class="photo-fallback">Recuerdos de papel, primeras revistas y una pasión que empezó a tomar forma.
+            </div>
+            <div class="photo-label"><small>El archivo</small><strong>Los comienzos</strong></div>
+          </div>
+          <div class="photo-panel current" id="current-panel">
+            <img src="https://cdn.ideatina.com/files/2023/02/260_carousel_0000s_0000_1.jpg"
+              alt="Leticia sonríe mientras sostiene una figura realizada en porcelana fría" loading="eager"
+              onerror="this.parentElement.classList.add('no-image')" />
+            <div class="photo-fallback">El taller de hoy: manos, ideas y nuevas historias para modelar.</div>
+            <div class="photo-label"><small>El presente</small><strong>La misma pasión</strong></div>
+          </div>
+        </div>
+        <div class="collage-sticker" aria-label="Treinta años"><span>desde</span><strong>1996</strong><span>con
+            amor</span></div>
+        <div class="collage-caption"><span>Memoria · Oficio · Legado</span><span>Una historia que sigue creciendo</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornament" aria-hidden="true"><span>❀</span></div>
+
+    <section class="welcome-section" id="bienvenida" aria-labelledby="welcome-title">
+      <article class="welcome-card">
+        <div class="section-kicker">Una celebración compartida</div>
+        <h2 id="welcome-title">Bienvenidos a este viaje</h2>
+        <p class="section-subtitle">Un homenaje vivo a treinta años de arte, generosidad y sueños hechos a mano.</p>
+        <div class="welcome-copy">
+          <p class="lead">Hay manos que trabajan la masa, y hay manos que, con amor y paciencia, transforman la masa en
+            historias, magia y vocación.</p>
+          <p>En 1996, un viaje maravilloso comenzó a moldearse. Desde aquellas primeras pantallas de <em>Utilísima
+              Satelital</em>, pasando por páginas de revistas que recorrieron el continente, hasta transformarse en una
+            escuela que hoy une a miles de apasionadas del modelado. Tres décadas se dicen rápido, pero se sienten en
+            cada rincón de la comunidad que logramos construir juntos.</p>
+          <p>Este espacio es un homenaje vivo a estos <strong>30 años de carrera de Leticia.</strong> Tres décadas de
+            generosidad incondicional, de técnicas compartidas sin secretos, de tardes enteras con olor a masa fresca y
+            de formar a miles de profesoras que hoy llevan su legado en sus propias manos.</p>
+          <p>El próximo <strong>8 de diciembre</strong> nos reuniremos de manera presencial para abrazarla y celebrar
+            este hito. Pero como el cariño por Lety no conoce de fronteras ni de distancias, abrimos las puertas de esta
+            ventana digital para todo el mundo.</p>
+          <p class="invitation">A vos, que aprendiste a modelar con sus videos, que te emocionaste con sus creaciones, o
+            que encontraste en la porcelana fría tu cable a tierra o tu sustento: ¡Bienvenidos!</p>
+          <p>Te invitamos a recorrer su historia, revivir los momentos más dulces y dejar tu huella en nuestro muro de
+            mensajes.</p>
+          <p><strong>¡Gracias por ser parte de este viaje mágico!</strong></p>
+        </div>
+      </article>
+      <div class="bottom-cta" id="cierre">
+        <p>Treinta años modelando sueños.<br>Y todavía quedan muchas historias por crear.</p>
+        <a class="button button-primary" href="#inicio">Volver al comienzo <span class="arrow"
+            aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">Con amor, por Lety</div>
+    <div>30 Años Modelando Sueños · Un homenaje a Leticia Suárez del Cerro</div>
+    <div class="image-note">Imágenes de referencia enlazadas desde IdeaTina y el archivo editorial de
+      Variasmanualidades. La imagen de archivo funciona como referencia visual; conviene sustituirla por una fotografía
+      autorizada de los años 90 o de Utilísima si está disponible.</div>
+  </footer>
+</body>
+
+</html>
