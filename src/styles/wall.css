@@ -1,0 +1,70 @@
+/* El muro comparte la paleta de la portada; controles legibles en celulares. */
+html { scroll-padding-top: 24px; }
+body:has(dialog[open]) { overflow: hidden; }
+button, input, textarea, select { font: inherit; }
+button.button { border: 0; display: inline-flex; align-items: center; justify-content: center; gap: .4rem; }
+button.button-secondary { border: 1px solid var(--rose); }
+button:disabled { opacity: .6; cursor: not-allowed; transform: none !important; }
+.wall-section { padding: 40px 0 72px; scroll-margin-top: 24px; }
+.wall-intro { max-width: 620px; margin: 14px auto 30px; text-align: center; font-size: 16px; color: var(--muted); line-height: 1.7; }
+.wall-instructions { padding: clamp(24px, 4vw, 40px); border: 1px solid var(--line); border-radius: 24px; background: var(--paper); margin-bottom: 38px; text-align: center; }
+.wall-instructions h3, .wall-empty h3 { font: italic 600 29px/1.2 'Cormorant Garamond', serif; color: var(--rose-dark); }
+.wall-instructions ol { display: grid; gap: 24px; padding: 0; list-style: none; text-align: left; margin: 26px 0; }
+.wall-instructions li { display: flex; gap: 14px; align-items: flex-start; }
+.wall-instructions li > span { display: grid; place-items: center; flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--rose-pale); color: var(--rose-dark); font-weight: 700; }
+.wall-instructions strong { color: var(--ink); font-size: 16px; }
+.wall-instructions p { margin: 4px 0 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.wall-section .button, .wish-dialog .button, .admin-panel .button { font-size: 15px; letter-spacing: .01em; min-height: 48px; padding: 12px 22px; }
+.wall-add > span { font-size: 24px; line-height: 1; }
+.wall-empty { text-align: center; padding: 40px 24px; border: 1px dashed var(--rose); border-radius: 24px; background: var(--paper); }
+.wall-empty p { max-width: 520px; margin: 14px auto 0; font-size: 16px; color: var(--muted); }
+.wall-results-title { font: italic 600 32px/1.2 'Cormorant Garamond', serif; color: var(--rose-dark); margin: 0 0 24px; text-align: center; }
+.wall-results-title:focus { outline: none; }
+.wish-card { overflow: hidden; border-radius: 22px; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 8px 24px rgb(76 55 48 / 4%); }
+.wish-photo-button { display: block; width: 100%; position: relative; border: 0; padding: 0; background: var(--rose-pale); }
+.wish-photo-button img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+.photo-hint { position: absolute; bottom: 10px; right: 10px; border-radius: 30px; background: var(--paper); color: var(--ink); padding: 4px 10px; font-size: 12px; }
+.wish-card-copy { padding: 24px; }
+.wish-flower { display: block; font-size: 32px; color: var(--rose); margin: 0 0 14px; line-height: 1; }
+.wish-message { font-size: 16px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+.wish-signature { display: flex; flex-direction: column; border-top: 1px solid var(--line); margin-top: 22px; padding-top: 16px; font-size: 14px; color: var(--muted); }
+.wish-signature strong { color: var(--rose-dark); font-weight: 700; font-size: 16px; }
+.wish-signature time { font-size: 12px; margin-top: 4px; }
+.wall-pagination { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px; margin: 30px 0 0; font-size: 14px; }
+.wall-moderation-note { text-align: center; color: var(--muted); font-size: 13px; margin: 28px auto 0; max-width: 620px; }
+.wall-notice { padding: 16px 20px; background: var(--rose-pale); color: #65383c; border: 1px solid var(--rose); border-radius: 14px; margin-bottom: 20px; font-size: 15px; }
+.wall-notice p { margin-bottom: 12px; }
+.notice-success { background: #e5eee2; color: #38593f; border-color: var(--sage); }
+.wish-dialog { margin: auto; padding: clamp(20px, 4vw, 36px); width: min(620px, calc(100% - 24px)); max-height: calc(100dvh - 32px); border: 1px solid var(--line); border-radius: 24px; background: var(--paper); color: var(--ink); box-shadow: var(--shadow); overscroll-behavior: contain; }
+.wish-dialog::backdrop { background: rgb(46 34 32 / 52%); }
+.dialog-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.dialog-heading h2, .dialog-heading h3 { margin: 0; text-align: left; font: italic 600 32px/1.2 'Cormorant Garamond', serif; color: var(--rose-dark); }
+.dialog-close { border: 0; border-radius: 50%; width: 44px; height: 44px; flex: 0 0 44px; font-size: 30px; line-height: 1; color: var(--rose-dark); background: var(--rose-pale); }
+.wish-form, .admin-login { font-size: 16px; line-height: 1.6; }
+.wish-form .form-label, .admin-login .form-label { font-weight: 600; color: var(--ink); }
+.wish-form .form-control, .admin-login .form-control, .admin-toolbar .form-select { font-size: 16px; min-height: 48px; background-color: #fffefa; border: 1px solid #b9a4a0; border-radius: 10px; color: var(--ink); }
+.wish-form .form-control:focus, .admin-login .form-control:focus, .admin-toolbar .form-select:focus { border-color: var(--rose-dark); box-shadow: 0 0 0 .2rem rgb(167 110 117 / 20%); }
+.wish-form .form-text { font-size: 13px; color: #6c5a55; }
+.wish-form .form-check-label { font-size: 14px; line-height: 1.55; }
+.wish-form .form-check-input { width: 20px; height: 20px; border-color: var(--rose-dark); margin-right: 8px; }
+.wish-form .form-check-input:checked { background-color: var(--rose-dark); border-color: var(--rose-dark); }
+.challenge-answer { max-width: 120px; }
+.photo-preview { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 16px; }
+.photo-preview img { max-width: 150px; max-height: 140px; border-radius: 12px; object-fit: contain; }
+.honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.wish-success { text-align: center; padding: 16px 0 8px; }
+.wish-success h4 { font: italic 600 32px 'Cormorant Garamond', serif; color: var(--rose-dark); }
+.wish-success p { font-size: 16px; margin: 20px 0; }
+.expanded-photo { display: block; max-width: 100%; max-height: 65dvh; height: auto; margin: 0 auto; border-radius: 12px; object-fit: contain; }
+.admin-link { display: inline-block; margin-top: 12px; font-size: 12px; }
+.admin-panel { padding: 24px 0 72px; min-height: 100dvh; }
+.admin-title { color: var(--rose-dark); text-align: center; font: italic 600 clamp(36px, 6vw, 52px)/1.2 'Cormorant Garamond', serif; }
+.admin-back { color: var(--rose-dark); font-size: 15px; }
+.admin-login { max-width: 460px; margin: 36px auto; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); }
+.admin-login h2 { font-size: 30px; margin-bottom: 12px; }
+.admin-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin: 24px 0; }
+.admin-wish { display: flex; flex-direction: column; }
+.admin-wish > .wish-card { flex: 1; }
+.admin-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+@media (min-width: 768px) { .wall-instructions ol { grid-template-columns: repeat(3, minmax(0, 1fr)); } .wall-section { padding-top: 56px; } }
+@media (max-width: 380px) { .wall-pagination .button { padding: 10px 13px; font-size: 14px; } }

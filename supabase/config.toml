@@ -1,0 +1,12 @@
+project_id = "leticia"
+
+# Las funciones publicas no necesitan una sesion de visitante.
+# moderate-wish y la vista admin de wall verifican usuario Y rol en su handler.
+[functions.wall]
+verify_jwt = false
+
+[functions.submit-wish]
+verify_jwt = false
+
+[functions.moderate-wish]
+verify_jwt = false

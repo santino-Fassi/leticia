@@ -1,0 +1,16 @@
+node_modules/
+.npm-cache/
+dist/
+.env
+.env.*
+!.env.example
+!.env.backup.example
+!supabase/.env.example
+backups/
+.supabase/
+supabase/.temp/
+supabase/.branches/
+coverage/
+*.log
+.qa/
+.deno-cache/
