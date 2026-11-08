@@ -19,7 +19,7 @@ const formatDate = (value) => new Intl.DateTimeFormat('es-AR', { day: 'numeric',
       <p class="wish-message">{{ wish.message }}</p>
       <footer class="wish-signature">
         <strong>{{ wish.name }}</strong>
-        <span>{{ [wish.city, wish.country].filter(Boolean).join(', ') }}</span>
+        <span v-if="wish.city || wish.country">{{ [wish.city, wish.country].filter(Boolean).join(', ') }}</span>
         <time :datetime="wish.created_at">{{ formatDate(wish.created_at) }}</time>
       </footer>
     </div>

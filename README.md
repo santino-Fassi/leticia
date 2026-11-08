@@ -40,9 +40,10 @@ npm run preview
 1. Crear una cuenta y un proyecto en el plan **Free**. Guardar la contraseña de la base de datos en un lugar privado.
 2. En **Project Settings → API / API Keys**, copiar Project URL y la clave publicable a .env.local.
 3. Abrir **SQL Editor**, pegar el contenido completo de **supabase/migrations/202611070001_wall.sql** y ejecutar **una sola vez**, en el proyecto nuevo.
-4. Comprobar que exista la tabla `public.wishes` y que RLS esté activado.
-5. Comprobar que Storage contenga `wish-photos`, marcado como **privado**. No hacerlo público ni agregar políticas que permitan subir/descargar anónimamente.
-6. En **Authentication → Providers / Email**, desactivar el registro público. Las visitantes no usan cuentas.
+4. Ejecutar también **supabase/migrations/202611080001_optional_location.sql** para que ciudad y país sean opcionales.
+5. Comprobar que exista la tabla `public.wishes` y que RLS esté activado.
+6. Comprobar que Storage contenga `wish-photos`, marcado como **privado**. No hacerlo público ni agregar políticas que permitan subir/descargar anónimamente.
+7. En **Authentication → Providers / Email**, desactivar el registro público. Las visitantes no usan cuentas.
 
 La migración crea una lista privada de administradores y un registro antispam. Un usuario de Auth NO es administrador hasta incorporarlo a esa lista.
 
@@ -55,6 +56,12 @@ npx supabase db push
 ```
 
 Usar el SQL Editor **o** db push para la instalación inicial; no ejecutar ambos sobre la misma base ya inicializada.
+
+Para actualizar un proyecto que ya funciona y hacer opcionales ciudad y país:
+
+1. Ejecutar únicamente **supabase/migrations/202611080001_optional_location.sql** en el SQL Editor. Conserva los mensajes existentes.
+2. Actualizar la función **submit-wish** desde su editor web con TODO el contenido de **supabase/dashboard/submit-wish.ts** y pulsar **Deploy**. Comprobar que **Verify JWT with legacy secret** siga desactivado.
+3. Subir los cambios del frontend a GitHub y esperar que termine el workflow de Pages.
 
 ## 2. Publicar las Edge Functions
 
@@ -168,7 +175,7 @@ Los cambios de Supabase se despliegan con su CLI: publicar el frontend no ejecut
 - Originales: JPG, PNG o WebP de hasta 5 MB. El navegador normaliza orientación, elimina metadatos al dibujar en canvas y crea JPEG de hasta 1280 px / 300 KB y miniatura de hasta 480 px / 50 KB.
 - El servidor vuelve a comprobar MIME, firma y estructura JPEG, peso, dimensiones y que existan ambas variantes.
 - Los textos se guardan como texto y Vue los presenta escapados; no se usa v-html para mensajes.
-- Nombre, ciudad, país, mensaje y consentimiento se validan también en el servidor.
+- Nombre y mensaje son los datos obligatorios; ciudad y país son opcionales y admiten hasta 80 caracteres cada uno. El servidor valida también estos límites, el consentimiento y la comprobación antispam.
 - Los envíos usan un token firmado con vencimiento de 20 minutos, una pregunta sencilla, un campo trampa y un límite atómico de **3 intentos válidos por conexión y hora**. La pregunta es una barrera básica, no un CAPTCHA avanzado. Personas en una misma red comparten esa cuota.
 - Se guarda un HMAC de la IP en el registro de intentos, nunca la IP original. Se limpia el historial de más de dos días cuando llega un nuevo envío.
 - Las fotos se mantienen privadas incluso después de aprobarlas. Solo las funciones generan enlaces válidos por diez minutos para aprobados o para el administrador.

@@ -1,10 +1,10 @@
 import { HttpError } from './http.js';
 
 export function validateFields(form) {
-  const rules = { name: [2, 80, 'nombre'], city: [1, 80, 'ciudad'], country: [1, 80, 'país'], message: [10, 2000, 'mensaje'] };
+  const rules = { name: [2, 80, 'nombre'], city: [0, 80, 'ciudad'], country: [0, 80, 'país'], message: [10, 2000, 'mensaje'] };
   const result = {};
   for (const [field, [minimum, maximum, label]] of Object.entries(rules)) {
-    const raw = form.get(field);
+    const raw = form.get(field) ?? (minimum === 0 ? '' : null);
     if (typeof raw !== 'string') throw new HttpError(400, `Completá el campo ${label}.`);
     const value = raw.normalize('NFC').trim();
     const length = [...value].length;

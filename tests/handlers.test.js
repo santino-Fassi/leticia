@@ -42,6 +42,38 @@ test('texto queda pendiente, persiste y no se devuelve informacion privada', asy
   assert.equal(s.state.wishes[0].photo_path, null);
 });
 
+test('acepta ciudad y pais vacios, omitidos o completados por separado', async () => {
+  for (const fields of [
+    { city: '', country: '' },
+    { city: '   ', country: '\t ' },
+    { city: 'Rosario', country: '' },
+    { city: '', country: 'Argentina' },
+    null,
+  ]) {
+    const s = setup();
+    const form = await formRequest(s.handler, { fields: fields || {} });
+    if (!fields) { form.form.delete('city'); form.form.delete('country'); }
+    s.advance();
+    assert.equal((await s.handler(form.makeRequest())).status, 201);
+    assert.equal(s.state.wishes[0].city, fields?.city.trim() || '');
+    assert.equal(s.state.wishes[0].country, fields?.country.trim() || '');
+    assert.equal(s.state.wishes[0].status, 'pending');
+  }
+});
+
+test('la ubicacion opcional sigue rechazando textos demasiado largos, controles y archivos', async () => {
+  for (const field of ['city', 'country']) {
+    for (const value of ['x'.repeat(81), 'texto\u0000', new Blob(['archivo'], { type: 'text/plain' })]) {
+      const s = setup();
+      const form = await formRequest(s.handler);
+      form.form.set(field, value);
+      s.advance();
+      assert.equal((await s.handler(form.makeRequest())).status, 400);
+      assert.equal(s.state.wishes.length, 0);
+    }
+  }
+});
+
 test('foto y miniatura se guardan como JPEG en el espacio privado', async () => {
   const s = setup();
   const form = await formRequest(s.handler, { photo: true });

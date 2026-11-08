@@ -50,7 +50,7 @@ onMounted(() => { if (isConfigured) loadPage(); });
       <div class="wall-instructions">
         <h3>¿Cómo dejar tu mensaje de cariño?</h3>
         <ol>
-          <li><span>1</span><div><strong>Tocá «Dejar mi mensaje»</strong><p>Escribí tu nombre y desde dónde la seguís.</p></div></li>
+          <li><span>1</span><div><strong>Tocá «Dejar mi mensaje»</strong><p>Escribí tu nombre. Si querés, contanos desde qué ciudad o país la seguís.</p></div></li>
           <li><span>2</span><div><strong>Compartí tu recuerdo</strong><p>Una anécdota, un agradecimiento o unas palabras de cariño. Si querés, sumá una foto.</p></div></li>
           <li><span>3</span><div><strong>Enviá tu abrazo</strong><p>El equipo lo revisará antes de publicarlo. No necesitás registrarte.</p></div></li>
         </ol>

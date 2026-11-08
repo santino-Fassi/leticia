@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { PGlite } from '@electric-sql/pglite';
 
 test('PostgreSQL aplica RLS y privilegios a visitantes y administradores', async () => {
@@ -24,8 +24,10 @@ test('PostgreSQL aplica RLS y privilegios a visitantes y administradores', async
       grant select, insert, update, delete on storage.objects to anon, authenticated, service_role;
       insert into auth.users values ('00000000-0000-4000-8000-000000000001', 'admin@example.invalid'), ('00000000-0000-4000-8000-000000000002', 'visitor@example.invalid');
     `);
-    const migration = await readFile(new URL('../supabase/migrations/202611070001_wall.sql', import.meta.url), 'utf8');
-    await db.exec(migration);
+    const migrations = new URL('../supabase/migrations/', import.meta.url);
+    for (const file of (await readdir(migrations)).filter((file) => file.endsWith('.sql')).sort()) {
+      await db.exec(await readFile(new URL(file, migrations), 'utf8'));
+    }
     await db.exec(`
       insert into private.wall_admins (user_id) values ('00000000-0000-4000-8000-000000000001');
       insert into public.wishes (name, city, country, message, status) values
@@ -61,6 +63,11 @@ test('PostgreSQL aplica RLS y privilegios a visitantes y administradores', async
     assert.equal((await db.query('select name from storage.objects')).rows.length, 0);
 
     await asRole('service_role');
+    const noLocation = await db.query("insert into public.wishes(name, message) values ('Sin ubicación', 'Gracias por compartir tu arte.') returning city, country, status");
+    assert.deepEqual(noLocation.rows, [{ city: '', country: '', status: 'pending' }]);
+    await db.exec("insert into public.wishes(name, city, country, message) values ('Ubicación vacía', '', '', 'Gracias por tantos años de enseñanza.')");
+    await assert.rejects(db.exec("insert into public.wishes(name, city, message) values ('Ciudad larga', repeat('x', 81), 'Gracias por compartir tu arte.')"), /wishes_city_check/);
+    await assert.rejects(db.exec("insert into public.wishes(name, country, message) values ('País largo', repeat('x', 81), 'Gracias por compartir tu arte.')"), /wishes_country_check/);
     assert.equal((await db.query("select public.is_wall_admin_for('00000000-0000-4000-8000-000000000001') as allowed")).rows[0].allowed, true);
     for (let index = 0; index < 3; index++) await db.exec("select public.reserve_wish_submission(repeat('a',64), gen_random_uuid())");
     await assert.rejects(db.exec("select public.reserve_wish_submission(repeat('a',64), gen_random_uuid())"), /SUBMISSION_RATE_LIMIT/);

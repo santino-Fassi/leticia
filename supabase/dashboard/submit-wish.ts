@@ -131,10 +131,10 @@ async function verifyChallenge(request, secret2, token, answer, now = Date.now()
 
 // supabase/functions/_shared/validation.js
 function validateFields(form) {
-  const rules = { name: [2, 80, "nombre"], city: [1, 80, "ciudad"], country: [1, 80, "pa\xEDs"], message: [10, 2e3, "mensaje"] };
+  const rules = { name: [2, 80, "nombre"], city: [0, 80, "ciudad"], country: [0, 80, "pa\xEDs"], message: [10, 2e3, "mensaje"] };
   const result = {};
   for (const [field, [minimum, maximum, label]] of Object.entries(rules)) {
-    const raw = form.get(field);
+    const raw = form.get(field) ?? (minimum === 0 ? "" : null);
     if (typeof raw !== "string") throw new HttpError(400, `Complet\xE1 el campo ${label}.`);
     const value = raw.normalize("NFC").trim();
     const length = [...value].length;

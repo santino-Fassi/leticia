@@ -17,6 +17,11 @@ test('la restauracion valida rutas y no transfiere UUID de Auth del proyecto ant
     const result = await readBackup(directory);
     assert.equal(result.wishes[0].moderated_by, null);
     assert.equal(result.photos.length, 2);
+    wish.city = wish.country = '';
+    await writeFile(path.join(directory, 'manifest.json'), JSON.stringify(manifest));
+    const noLocation = await readBackup(directory);
+    assert.equal(noLocation.wishes[0].city, '');
+    assert.equal(noLocation.wishes[0].country, '');
     manifest.files.push('../../secret.txt');
     await writeFile(path.join(directory, 'manifest.json'), JSON.stringify(manifest));
     await assert.rejects(readBackup(directory), /rutas/);

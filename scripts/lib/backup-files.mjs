@@ -15,7 +15,7 @@ export async function readBackup(directory) {
   const wishes = manifest.wishes.map((row) => {
     if (!idPattern.test(row.id) || ids.has(row.id) || !['pending', 'approved', 'rejected'].includes(row.status)) throw new Error('La copia contiene mensajes inválidos o repetidos.');
     ids.add(row.id);
-    for (const [field, minimum, maximum] of [['name', 2, 80], ['city', 1, 80], ['country', 1, 80], ['message', 10, 2000]]) {
+    for (const [field, minimum, maximum] of [['name', 2, 80], ['city', 0, 80], ['country', 0, 80], ['message', 10, 2000]]) {
       if (typeof row[field] !== 'string' || [...row[field].trim()].length < minimum || [...row[field]].length > maximum) throw new Error('La copia contiene textos inválidos.');
     }
     if (row.photo_path !== null || row.thumbnail_path !== null) {
