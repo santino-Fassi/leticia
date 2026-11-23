@@ -9,9 +9,9 @@ import { buildInterleavedGallery, filterGalleryItems, formatDuration } from '../
 const ROOT = process.cwd();
 const manifest = JSON.parse(readFileSync(join(ROOT, 'src', 'lib', 'gallery-manifest.json'), 'utf8'));
 
-test('gallery manifest incluye las 44 fotos y 7 videos con archivos optimizados', () => {
-  assert.equal(manifest.images.length, 44);
-  assert.equal(manifest.videos.length, 7);
+test('gallery manifest incluye las 47 fotos y 8 videos con archivos optimizados', () => {
+  assert.equal(manifest.images.length, 47);
+  assert.equal(manifest.videos.length, 8);
 
   for (const img of manifest.images) {
     assert.ok(img.width > 0 && img.height > 0, `Dimensiones válidas para ${img.id}`);
@@ -35,8 +35,8 @@ test('formatDuration formatea duraciones en M:SS', () => {
 
 test('buildInterleavedGallery y filterGalleryItems mantienen todos los elementos y filtran correctamente', () => {
   const combined = buildInterleavedGallery(manifest.images, manifest.videos);
-  assert.equal(combined.length, 51);
-  assert.equal(filterGalleryItems(combined, 'all').length, 51);
-  assert.equal(filterGalleryItems(combined, 'image').length, 44);
-  assert.equal(filterGalleryItems(combined, 'video').length, 7);
+  assert.equal(combined.length, 55);
+  assert.equal(filterGalleryItems(combined, 'all').length, 55);
+  assert.equal(filterGalleryItems(combined, 'image').length, 47);
+  assert.equal(filterGalleryItems(combined, 'video').length, 8);
 });
