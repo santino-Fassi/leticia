@@ -127,7 +127,7 @@ onBeforeUnmount(() => {
       <div class="section-kicker">Recuerdos en imágenes y movimiento</div>
       <h2 id="gallery-title">Galería de 30 años</h2>
       <p class="gallery-intro">
-        Talleres, encuentros y momentos compartidos que cuentan tres décadas de arte, enseñanza y cariño.
+        Postales, talleres, encuentros y momentos compartidos que cuentan tres décadas de arte, enseñanza y cariño.
       </p>
 
       <div class="gallery-toolbar">

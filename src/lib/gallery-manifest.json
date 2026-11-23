@@ -85,9 +85,9 @@
       "id": "foto-10",
       "type": "image",
       "file": "foto-10.webp",
-      "width": 1280,
-      "height": 853,
-      "orientation": "landscape",
+      "width": 900,
+      "height": 1600,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 10 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
@@ -103,53 +103,53 @@
       "id": "foto-12",
       "type": "image",
       "file": "foto-12.webp",
-      "width": 900,
-      "height": 1600,
-      "orientation": "portrait",
+      "width": 1280,
+      "height": 853,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 12 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-13",
       "type": "image",
       "file": "foto-13.webp",
-      "width": 1280,
-      "height": 853,
-      "orientation": "landscape",
+      "width": 1080,
+      "height": 1080,
+      "orientation": "square",
       "alt": "Recuerdo fotográfico 13 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-14",
       "type": "image",
       "file": "foto-14.webp",
-      "width": 1280,
-      "height": 853,
-      "orientation": "landscape",
+      "width": 1200,
+      "height": 1600,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 14 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-15",
       "type": "image",
       "file": "foto-15.webp",
-      "width": 1280,
-      "height": 853,
-      "orientation": "landscape",
+      "width": 1200,
+      "height": 1600,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 15 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-16",
       "type": "image",
       "file": "foto-16.webp",
-      "width": 1080,
-      "height": 1080,
-      "orientation": "square",
+      "width": 1200,
+      "height": 1600,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 16 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-17",
       "type": "image",
       "file": "foto-17.webp",
-      "width": 1200,
-      "height": 1600,
+      "width": 1066,
+      "height": 1599,
       "orientation": "portrait",
       "alt": "Recuerdo fotográfico 17 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
@@ -157,9 +157,9 @@
       "id": "foto-18",
       "type": "image",
       "file": "foto-18.webp",
-      "width": 1200,
-      "height": 1600,
-      "orientation": "portrait",
+      "width": 1280,
+      "height": 591,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 18 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
@@ -175,18 +175,18 @@
       "id": "foto-20",
       "type": "image",
       "file": "foto-20.webp",
-      "width": 1066,
-      "height": 1599,
-      "orientation": "portrait",
+      "width": 1600,
+      "height": 1200,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 20 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-21",
       "type": "image",
       "file": "foto-21.webp",
-      "width": 1280,
-      "height": 591,
-      "orientation": "landscape",
+      "width": 1158,
+      "height": 1544,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 21 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
@@ -202,26 +202,26 @@
       "id": "foto-23",
       "type": "image",
       "file": "foto-23.webp",
-      "width": 1600,
-      "height": 1200,
-      "orientation": "landscape",
+      "width": 1200,
+      "height": 1600,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 23 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-24",
       "type": "image",
       "file": "foto-24.webp",
-      "width": 1158,
-      "height": 1544,
-      "orientation": "portrait",
+      "width": 1600,
+      "height": 1200,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 24 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-25",
       "type": "image",
       "file": "foto-25.webp",
-      "width": 1200,
-      "height": 1600,
+      "width": 1158,
+      "height": 1544,
       "orientation": "portrait",
       "alt": "Recuerdo fotográfico 25 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
@@ -229,17 +229,17 @@
       "id": "foto-26",
       "type": "image",
       "file": "foto-26.webp",
-      "width": 1200,
-      "height": 1600,
-      "orientation": "portrait",
+      "width": 720,
+      "height": 540,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 26 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-27",
       "type": "image",
       "file": "foto-27.webp",
-      "width": 1600,
-      "height": 1200,
+      "width": 960,
+      "height": 720,
       "orientation": "landscape",
       "alt": "Recuerdo fotográfico 27 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
@@ -247,9 +247,9 @@
       "id": "foto-28",
       "type": "image",
       "file": "foto-28.webp",
-      "width": 1158,
-      "height": 1544,
-      "orientation": "portrait",
+      "width": 960,
+      "height": 720,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 28 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
@@ -257,17 +257,17 @@
       "type": "image",
       "file": "foto-29.webp",
       "width": 720,
-      "height": 540,
-      "orientation": "landscape",
+      "height": 960,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 29 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-30",
       "type": "image",
       "file": "foto-30.webp",
-      "width": 960,
-      "height": 720,
-      "orientation": "landscape",
+      "width": 864,
+      "height": 1152,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 30 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
@@ -283,17 +283,17 @@
       "id": "foto-32",
       "type": "image",
       "file": "foto-32.webp",
-      "width": 720,
-      "height": 960,
-      "orientation": "portrait",
+      "width": 960,
+      "height": 540,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 32 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-33",
       "type": "image",
       "file": "foto-33.webp",
-      "width": 864,
-      "height": 1152,
+      "width": 900,
+      "height": 1600,
       "orientation": "portrait",
       "alt": "Recuerdo fotográfico 33 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
@@ -301,17 +301,17 @@
       "id": "foto-34",
       "type": "image",
       "file": "foto-34.webp",
-      "width": 960,
-      "height": 720,
-      "orientation": "landscape",
+      "width": 1080,
+      "height": 1080,
+      "orientation": "square",
       "alt": "Recuerdo fotográfico 34 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-35",
       "type": "image",
       "file": "foto-35.webp",
-      "width": 960,
-      "height": 540,
+      "width": 1600,
+      "height": 1200,
       "orientation": "landscape",
       "alt": "Recuerdo fotográfico 35 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
@@ -319,44 +319,44 @@
       "id": "foto-36",
       "type": "image",
       "file": "foto-36.webp",
-      "width": 900,
-      "height": 1600,
-      "orientation": "portrait",
+      "width": 1080,
+      "height": 1080,
+      "orientation": "square",
       "alt": "Recuerdo fotográfico 36 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-37",
       "type": "image",
       "file": "foto-37.webp",
-      "width": 1080,
-      "height": 1080,
-      "orientation": "square",
+      "width": 1158,
+      "height": 1544,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 37 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-38",
       "type": "image",
       "file": "foto-38.webp",
-      "width": 1600,
-      "height": 1200,
-      "orientation": "landscape",
+      "width": 1200,
+      "height": 1600,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 38 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-39",
       "type": "image",
       "file": "foto-39.webp",
-      "width": 1080,
-      "height": 1080,
-      "orientation": "square",
+      "width": 1200,
+      "height": 1600,
+      "orientation": "portrait",
       "alt": "Recuerdo fotográfico 39 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-40",
       "type": "image",
       "file": "foto-40.webp",
-      "width": 1158,
-      "height": 1544,
+      "width": 528,
+      "height": 960,
       "orientation": "portrait",
       "alt": "Recuerdo fotográfico 40 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
@@ -364,16 +364,16 @@
       "id": "foto-41",
       "type": "image",
       "file": "foto-41.webp",
-      "width": 1200,
-      "height": 1600,
-      "orientation": "portrait",
+      "width": 1080,
+      "height": 1080,
+      "orientation": "square",
       "alt": "Recuerdo fotográfico 41 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-42",
       "type": "image",
       "file": "foto-42.webp",
-      "width": 1200,
+      "width": 739,
       "height": 1600,
       "orientation": "portrait",
       "alt": "Recuerdo fotográfico 42 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
@@ -382,46 +382,19 @@
       "id": "foto-43",
       "type": "image",
       "file": "foto-43.webp",
-      "width": 528,
-      "height": 960,
-      "orientation": "portrait",
+      "width": 960,
+      "height": 720,
+      "orientation": "landscape",
       "alt": "Recuerdo fotográfico 43 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     },
     {
       "id": "foto-44",
       "type": "image",
       "file": "foto-44.webp",
-      "width": 1080,
-      "height": 1080,
-      "orientation": "square",
-      "alt": "Recuerdo fotográfico 44 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
-    },
-    {
-      "id": "foto-45",
-      "type": "image",
-      "file": "foto-45.webp",
-      "width": 739,
-      "height": 1600,
-      "orientation": "portrait",
-      "alt": "Recuerdo fotográfico 45 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
-    },
-    {
-      "id": "foto-46",
-      "type": "image",
-      "file": "foto-46.webp",
-      "width": 960,
-      "height": 720,
-      "orientation": "landscape",
-      "alt": "Recuerdo fotográfico 46 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
-    },
-    {
-      "id": "foto-47",
-      "type": "image",
-      "file": "foto-47.webp",
       "width": 1038,
       "height": 1338,
       "orientation": "portrait",
-      "alt": "Recuerdo fotográfico 47 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
+      "alt": "Recuerdo fotográfico 44 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro"
     }
   ],
   "videos": [
@@ -434,9 +407,9 @@
       "sourceName": "WhatsApp Video 2026-11-23 at 09.54.32.mp4",
       "title": "Recuerdo en video 1",
       "alt": "Recuerdo en video 1 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro",
-      "width": 478,
-      "height": 850,
-      "duration": 167
+      "width": 9,
+      "height": 16,
+      "duration": null
     },
     {
       "id": "video-02",
@@ -447,9 +420,9 @@
       "sourceName": "WhatsApp Video 2026-11-23 at 09.54.33.mp4",
       "title": "Recuerdo en video 2",
       "alt": "Recuerdo en video 2 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro",
-      "width": 848,
-      "height": 478,
-      "duration": 56
+      "width": 9,
+      "height": 16,
+      "duration": null
     },
     {
       "id": "video-03",
@@ -460,9 +433,9 @@
       "sourceName": "WhatsApp Video 2026-11-23 at 09.54.33 (1).mp4",
       "title": "Recuerdo en video 3",
       "alt": "Recuerdo en video 3 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro",
-      "width": 848,
-      "height": 478,
-      "duration": 110
+      "width": 9,
+      "height": 16,
+      "duration": null
     },
     {
       "id": "video-04",
@@ -486,9 +459,9 @@
       "sourceName": "WhatsApp Video 2026-11-23 at 09.54.34.mp4",
       "title": "Recuerdo en video 5",
       "alt": "Recuerdo en video 5 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro",
-      "width": 848,
-      "height": 478,
-      "duration": 168
+      "width": 9,
+      "height": 16,
+      "duration": null
     },
     {
       "id": "video-06",
@@ -499,9 +472,9 @@
       "sourceName": "WhatsApp Video 2026-11-23 at 09.54.34 (1).mp4",
       "title": "Recuerdo en video 6",
       "alt": "Recuerdo en video 6 del homenaje 30 años modelando sueños de Leticia Suárez del Cerro",
-      "width": 478,
-      "height": 850,
-      "duration": 140
+      "width": 9,
+      "height": 16,
+      "duration": null
     },
     {
       "id": "video-07",
