@@ -1,16 +1,11 @@
-node_modules/
-.npm-cache/
-dist/
-.env
-.env.*
-!.env.example
-!.env.backup.example
-!supabase/.env.example
-backups/
-.supabase/
-supabase/.temp/
-supabase/.branches/
-coverage/
-*.log
-.qa/
-.deno-cache/
+# 1. Ignorar todo
+*
+
+# 2. Permitir el archivo .gitignore (opcional, pero recomendado)
+!.gitignore
+
+# 3. Permitir la carpeta específica
+!dist
+
+# 4. Permitir todo el contenido dentro de esa carpeta
+!dist/**
