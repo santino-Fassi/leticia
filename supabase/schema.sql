@@ -1,4 +1,5 @@
--- Ejecutar en un proyecto Supabase nuevo. Nunca desactivar RLS para publicar.
+-- Esquema actual del muro. Ejecutar una sola vez en un proyecto Supabase nuevo.
+-- Nunca desactivar RLS ni hacer público el bucket de fotos.
 create schema if not exists private;
 revoke all on schema private from public, anon, authenticated;
 
@@ -31,8 +32,8 @@ grant execute on function public.is_wall_admin_for(uuid) to service_role;
 create table public.wishes (
   id uuid primary key default gen_random_uuid(),
   name text not null check (char_length(btrim(name)) between 2 and 80),
-  city text not null check (char_length(btrim(city)) between 1 and 80),
-  country text not null check (char_length(btrim(country)) between 1 and 80),
+  city text not null default '' check (char_length(btrim(city)) between 0 and 80),
+  country text not null default '' check (char_length(btrim(country)) between 0 and 80),
   message text not null check (char_length(btrim(message)) between 10 and 2000),
   status text not null default 'pending' check (status in ('pending', 'approved', 'rejected')),
   photo_path text,

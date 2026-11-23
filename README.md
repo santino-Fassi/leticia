@@ -39,29 +39,12 @@ npm run preview
 
 1. Crear una cuenta y un proyecto en el plan **Free**. Guardar la contraseña de la base de datos en un lugar privado.
 2. En **Project Settings → API / API Keys**, copiar Project URL y la clave publicable a .env.local.
-3. Abrir **SQL Editor**, pegar el contenido completo de **supabase/migrations/202611070001_wall.sql** y ejecutar **una sola vez**, en el proyecto nuevo.
-4. Ejecutar también **supabase/migrations/202611080001_optional_location.sql** para que ciudad y país sean opcionales.
-5. Comprobar que exista la tabla `public.wishes` y que RLS esté activado.
-6. Comprobar que Storage contenga `wish-photos`, marcado como **privado**. No hacerlo público ni agregar políticas que permitan subir/descargar anónimamente.
-7. En **Authentication → Providers / Email**, desactivar el registro público. Las visitantes no usan cuentas.
+3. Abrir **SQL Editor**, pegar el contenido completo de **supabase/schema.sql** y ejecutarlo una sola vez en un proyecto nuevo.
+4. Comprobar que exista la tabla `public.wishes` y que RLS esté activado.
+5. Comprobar que Storage contenga `wish-photos`, marcado como **privado**. No hacerlo público ni agregar políticas que permitan subir/descargar anónimamente.
+6. En **Authentication → Providers /Email**, desactivar el registro público. Las visitantes no usan cuentas.
 
-La migración crea una lista privada de administradores y un registro antispam. Un usuario de Auth NO es administrador hasta incorporarlo a esa lista.
-
-Alternativa al SQL Editor, después de iniciar sesión con la CLI:
-
-```powershell
-npx supabase login
-npx supabase link --project-ref TU-PROYECTO
-npx supabase db push
-```
-
-Usar el SQL Editor **o** db push para la instalación inicial; no ejecutar ambos sobre la misma base ya inicializada.
-
-Para actualizar un proyecto que ya funciona y hacer opcionales ciudad y país:
-
-1. Ejecutar únicamente **supabase/migrations/202611080001_optional_location.sql** en el SQL Editor. Conserva los mensajes existentes.
-2. Actualizar la función **submit-wish** desde su editor web con TODO el contenido de **supabase/dashboard/submit-wish.ts** y pulsar **Deploy**. Comprobar que **Verify JWT with legacy secret** siga desactivado.
-3. Subir los cambios del frontend a GitHub y esperar que termine el workflow de Pages.
+El esquema crea una lista privada de administradores y un registro antispam. Un usuario de Auth NO es administrador hasta incorporarlo a esa lista. Ya incluye la ubicación opcional: no hay migraciones históricas que aplicar por separado.
 
 ## 2. Publicar las Edge Functions
 
@@ -202,7 +185,7 @@ El script escribe mensajes y archivos en `backups/FECHA/`. **manifest.json apare
 
 Restauración en un proyecto nuevo:
 
-1. Aplicar la migración, crear de nuevo los administradores y publicar las tres funciones.
+1. Aplicar `supabase/schema.sql`, crear de nuevo los administradores y publicar las tres funciones.
 2. Usar `npm run restore -- RUTA-DE-LA-COPIA` con .env.backup apuntando al proyecto destino. El script exige una tabla y un bucket vacíos y valida los archivos antes de importar.
 3. Actualizar las variables del frontend y reconstruir GitHub Pages.
 4. Enviar un aporte de prueba, aprobarlo y comprobarlo desde una sesión sin iniciar.
@@ -226,11 +209,10 @@ La portada conserva las imágenes externas del diseño inicial. Para asegurar su
 ## Estructura
 
 - `src/`: componentes, conexión a Supabase, compresión y estilos del muro.
-- `frontend/estilos/styles.css`: estilos de la portada original, conservados.
-- `supabase/`: migración, funciones y configuración del backend.
+- `src/styles/cover.css`: estilos de la portada.
+- `supabase/`: esquema actual, funciones y configuración del backend.
 - `scripts/`: comprobación de variables, copias y restauración.
 - `tests/`: pruebas y dobles de servicios; nunca se publican en dist/.
-- `referencia.html`: referencia visual original.
 
 ## Referencias oficiales
 

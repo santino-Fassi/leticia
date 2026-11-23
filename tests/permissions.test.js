@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile, readdir } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { PGlite } from '@electric-sql/pglite';
 
 test('PostgreSQL aplica RLS y privilegios a visitantes y administradores', async () => {
@@ -24,10 +24,8 @@ test('PostgreSQL aplica RLS y privilegios a visitantes y administradores', async
       grant select, insert, update, delete on storage.objects to anon, authenticated, service_role;
       insert into auth.users values ('00000000-0000-4000-8000-000000000001', 'admin@example.invalid'), ('00000000-0000-4000-8000-000000000002', 'visitor@example.invalid');
     `);
-    const migrations = new URL('../supabase/migrations/', import.meta.url);
-    for (const file of (await readdir(migrations)).filter((file) => file.endsWith('.sql')).sort()) {
-      await db.exec(await readFile(new URL(file, migrations), 'utf8'));
-    }
+    const schema = await readFile(new URL('../supabase/schema.sql', import.meta.url), 'utf8');
+    await db.exec(schema);
     await db.exec(`
       insert into private.wall_admins (user_id) values ('00000000-0000-4000-8000-000000000001');
       insert into public.wishes (name, city, country, message, status) values
