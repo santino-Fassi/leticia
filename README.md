@@ -221,3 +221,17 @@ La portada conserva las imágenes externas del diseño inicial. Para asegurar su
 - [Supabase: precios](https://supabase.com/pricing)
 - [Supabase: pausas](https://supabase.com/docs/guides/platform/free-project-pausing)
 - [Supabase: archivos privados](https://supabase.com/docs/guides/storage/buckets/fundamentals)
+
+## Galería de 30 años (`src/galeria/`)
+
+La galería se aloja directamente en el repositorio (`src/galeria/`) y se sirve desde GitHub Pages para no consumir la cuota gratuita de 5 GB/mes de egress de Supabase (reservada al Muro de los Deseos).
+
+- **Imágenes (`src/galeria/imagenes/` y `src/galeria/thumbs/`)**: las 44 fotos están optimizadas en formato WebP (versión completa de hasta 1600 px y miniatura de hasta 640 px para carga rápida en grilla).
+- **Videos (`src/galeria/videos/` y `src/galeria/posters/`)**: se optimizan en H.264/AAC con `faststart` y **sin recortar ni acortar duración**. Los videos que ya están en `src/galeria/videos/` se reproducen con `<video>` nativo; los que aún no se optimizaron localmente muestran un reproductor embebido de respaldo desde Google Drive.
+- **Optimizar los videos restantes localmente**: con `ffmpeg` instalado, descargá la carpeta `videos` de Drive y ejecutá:
+
+```powershell
+npm run optimize:gallery -- "C:\ruta\a\galeria\videos"
+```
+
+El script optimiza cada video sin recortes, genera su póster WebP y actualiza `src/lib/gallery-manifest.json`; Vite los toma automáticamente en la siguiente compilación.

@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
+import TributeGallery from './components/TributeGallery.vue';
 import WishWall from './components/WishWall.vue';
 import AdminPanel from './components/AdminPanel.vue';
 
@@ -23,7 +24,11 @@ onUnmounted(() => window.removeEventListener('hashchange', syncRoute));
                         <span>30 años modelando sueños</span>
                     </span>
                 </a>
-                <a class="nav-link col-auto" href="#bienvenida">EL HOMENAJE <span aria-hidden="true">↘</span></a>
+                <nav class="col-auto d-flex align-items-center gap-3 gap-md-4" aria-label="Navegación principal">
+                    <a class="nav-link" href="#bienvenida">EL HOMENAJE <span aria-hidden="true">↘</span></a>
+                    <a class="nav-link" href="#galeria">GALERÍA <span aria-hidden="true">↘</span></a>
+                    <a class="nav-link" href="#muro">MURO <span aria-hidden="true">↘</span></a>
+                </nav>
             </div>
         </header>
 
@@ -49,7 +54,7 @@ onUnmounted(() => window.removeEventListener('hashchange', syncRoute));
                                 </div>
                                 <div class="cta-row d-flex flex-wrap gap-2 justify-content-center">
                                     <a class="button button-primary d-inline-flex align-items-center justify-content-center gap-3"
-                                        href="#bienvenida">Leer el homenaje <span class="arrow"
+                                        href="#galeria">Recorrer la galería <span class="arrow"
                                             aria-hidden="true">↓</span></a>
                                     <a class="button button-secondary d-inline-flex align-items-center justify-content-center gap-3"
                                         href="#muro">Dejá tu mensaje <span class="arrow"
@@ -160,6 +165,23 @@ onUnmounted(() => window.removeEventListener('hashchange', syncRoute));
                             </article>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <div class="ornament d-flex justify-content-center align-items-center gap-3" aria-hidden="true">
+                <span>❀</span>
+            </div>
+
+            <TributeGallery />
+
+            <div class="ornament d-flex justify-content-center align-items-center gap-3" aria-hidden="true">
+                <span>❀</span>
+            </div>
+
+            <WishWall />
+
+            <section class="pb-5" aria-label="Cierre del homenaje">
+                <div class="container-fluid site-container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-10 col-lg-8">
                             <div class="bottom-cta" id="cierre">
@@ -172,7 +194,6 @@ onUnmounted(() => window.removeEventListener('hashchange', syncRoute));
                     </div>
                 </div>
             </section>
-            <WishWall />
         </main>
 
         <footer class="footer">

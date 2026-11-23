@@ -12,7 +12,8 @@
     "check:config": "node scripts/check-config.mjs",
     "restore": "node --env-file-if-exists=.env.backup scripts/restore.mjs",
     "check:backend": "node scripts/check-backend.mjs",
-    "prepare:supabase": "node scripts/prepare-dashboard.mjs"
+    "prepare:supabase": "node scripts/prepare-dashboard.mjs",
+    "optimize:gallery": "node scripts/optimize-gallery.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.0",
